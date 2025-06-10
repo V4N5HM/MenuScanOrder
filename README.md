@@ -1,68 +1,85 @@
-# CodeIgniter 4 Application Starter
+# MenuScanOrder
 
-## What is CodeIgniter?
+**MenuScanOrder** is a full-stack SaaS web application designed to digitize and streamline the dining experience in cafés, restaurants, and coffee shops. By combining QR code technology, real-time ordering, and an intuitive admin dashboard, MenuScanOrder enables contactless, efficient, and user-friendly order management for both customers and restaurants.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+---
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Key Features
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+- **QR-Based Ordering**  
+  Generate table-specific QR codes that link directly to digital menus.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+- **Customer Ordering Interface**  
+  Clean, responsive, and mobile-friendly digital menu with real-time order tracking.
 
-## Installation & updates
+- **Admin Dashboard**  
+  Manage menus, tables, and orders with an intuitive UI.
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+- **Order Management**  
+  Track incoming orders with status updates, customer details, and item breakdowns.
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+- **Feedback System**  
+  Customers can submit ratings and reviews to help restaurants improve service.
 
-## Setup
+- **Secure Login System**  
+  Authenticated access with hashed passwords for admins and staff.
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+---
 
-## Important Change with index.php
+## Mockups
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+The repository includes HTML mockups for:
+- Login Page
+- Menu Creation
+- Order Management
+- QR Code Generator
+- Customer Menu View
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+> *Note: These mockups are static and do not include backend/database functionality.*
 
-**Please** read the user guide for a better explanation of how CI4 works!
+---
 
-## Repository Management
+## Database Design
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+The database supports:
+- **Two User Roles:** Customers and Sellers
+- **Multiple Restaurants:** Each managing their own menus and tables
+- **Order History:** Tracks orders with customer, table, item, and status data
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+*See `database_design.png` or `schema.sql` (if added) for structure.*
 
-## Server Requirements
+---
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+## Technology Stack
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+**Frontend:**
+- HTML/CSS + Bootstrap
+- React.js (selected after comparison with Angular & Vue)
 
-> [!WARNING]
-> The end of life date for PHP 7.4 was November 28, 2022.
-> The end of life date for PHP 8.0 was November 26, 2023.
-> If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> The end of life date for PHP 8.1 will be November 25, 2024.
+**Backend:**
+- Node.js / Express (assumed for backend API, not yet implemented)
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+**Other Tools:**
+- `QRCode.js` for QR generation
+- `dbdiagram.io` for ERD
+- `mermaid.js` (via mermaid.live) for Gantt chart planning
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+---
+
+## Development Timeline
+
+| Phase            | Duration        | Description                                          |
+|------------------|------------------|------------------------------------------------------|
+| Planning         | 1–2 weeks        | Requirement gathering, mockups, tech stack research |
+| Design           | 2 weeks          | Wireframes, DB schema, architecture planning         |
+| Development      | 8 weeks          | Frontend, backend, APIs, integration, debugging      |
+| Testing & Deploy | 4–5 weeks        | QA, deployment, post-launch testing                  |
+
+---
+
+## How to Run (Mockups Only)
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/V4N5HM/Web-Development-Project-1.git
+   cd Web-Development-Project-1
