@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Order Management</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    .order-table {
+      margin-top: 20px;
+    }
+    .order-table th,
+    .order-table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+    .order-table tbody tr:nth-child(even) {
+      background-color: #f5f5f5;
+    }
+    .order-table tfoot tr:last-child td {
+      border-top: 2px solid #ddd;
+    }
+    .order-status {
+      margin-top: 20px;
+    }
+    .order-status label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .order-status input {
+      margin-right: 5px;
+    }
+    .order-status button {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">MenuScanOrder</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Table Management</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">QR Code Generation</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-8">
+        <table class="order-table table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Table Number</th>
+              <th>Customer Name</th>
+              <th>Menu Item</th>
+              <th>Quantity</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>1</td>
+              <td>John Doe</td>
+              <td>Appetizer 1</td>
+              <td>2</td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="order1" id="order1-pending" value="pending" checked>
+                  <label class="form-check-label" for="order1-pending">
+                    Pending
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="order1" id="order1-in-progress" value="in-progress">
+                  <label class="form-check-label" for="order1-in-progress">
+                    In Progress
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="order1" id="order1-completed" value="completed">
+                  <label class="form-check-label" for="order1-completed">
+                    Completed</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>2</td>
+              <td>Jane Smith</td>
+              <td>Appetizer 2</td>
+              <td>1</td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="order2" id="order2-pending" value="pending" checked>
+                  <label class="form-check-label" for="order2-pending">
+                    Pending
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="order2" id="order2-in-progress" value="in-progress">
+                  <label class="form-check-label" for="order2-in-progress">
+                    In Progress
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="order2" id="order2-completed" value="completed">
+                  <label class="form-check-label" for="order2-completed">
+                    Completed
+                  </label>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="5">Total Orders: 2</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <div class="col-md-4">
+        <div class="order-status">
+          <h4>Order Status</h4>
+          <form>
+            <div class="form-group">
+              <select class="form-control">
+                <option>Order 1</option>
+                <option>Order 2</option>
+              </select>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="order-status" id="order-status-pending" value="pending" checked>
+              <label class="form-check-label" for="order-status-pending">
+                Pending
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="order-status" id="order-status-in-progress" value="in-progress">
+              <label class="form-check-label" for="order-status-in-progress">
+                In Progress
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="order-status" id="order-status-completed" value="completed">
+              <label class="form-check-label" for="order-status-completed">
+                Completed
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Status</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
