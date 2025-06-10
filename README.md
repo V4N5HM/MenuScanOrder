@@ -54,10 +54,10 @@ The database supports:
 
 **Frontend:**
 - HTML/CSS + Bootstrap
-- React.js (selected after comparison with Angular & Vue)
+- jQuery 
 
 **Backend:**
-- Node.js / Express (assumed for backend API, not yet implemented)
+- PHP(CodeIgniter4)
 
 **Other Tools:**
 - `QRCode.js` for QR generation
